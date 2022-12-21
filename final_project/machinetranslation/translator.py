@@ -9,7 +9,7 @@ load_dotenv()
 apikey = os.environ['apikey']
 url = os.environ['url']
 
-"""
+
 authenticator = IAMAuthenticator(apikey)
 language_translator = LanguageTranslatorV3(
     version='2018-05-01',
@@ -17,29 +17,29 @@ language_translator = LanguageTranslatorV3(
 )
 
 language_translator.set_service_url(url)
-"""
+
 #language_translator.set_disable_ssl_verification(True)
 
 def english_to_french(english_text):
     if english_text is None:
         return None
-    """
+    
     translation = language_translator.translate(
         text=english_text,
         model_id='en-fr').get_result()
     french_text = translation["translations"][0]["translation"]
     return french_text
-    """
-    return "Bonjour"
+    
+    #return "Bonjour"
 
 def french_to_english(french_text):
     if french_text is None:
         return None
-    """
+    
     translation = language_translator.translate(
         text=french_text,
         model_id='fr-en').get_result()
     english_text = translation["translations"][0]["translation"]
     return english_text
-    """
-    return "Hello"
+    
+    #return "Hello"
